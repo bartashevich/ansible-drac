@@ -35,7 +35,7 @@ Limit DRAC services to ssh.
 **NOTE:** This playbook will execute `racadm racreset` at the end of a successful run.  You may want to test this on a single DRAC first. :)
 
 ### debug
-Connects and exits printing full response from the remote.
+Connects and runs a "noop" command, printing full response from the remote.
 
 The debug playbook is useful as a quick "status" check.  The tasks will almost always succeed but the output will tell you if the DRAC is responding, etc.
 
@@ -46,7 +46,11 @@ To add debug output to any task add the following:
 - debug: var=result
 ```
 
-See the `debug.yml` playbook for a complete example.  
+See the `debug.yml` playbook for a complete example.
+
+## Notes / Caveats
+- running `exit` as a command confuses ansible-playbook when using a bastion/ssh_proxy setup (ansible ad-hoc will run it just fine though)
+- if you setup an ssh proxy config in a separate file (e.g. not your ~/.ssh/config) remember to also refer to that same config file via `-F <ssh_config>` when specifying the ProxyCommand (or the subsequent ssh will use your default config instead)
 
 ## TODO
 - add tests (need a remote drac simulator!)
