@@ -4,7 +4,7 @@
   name: debug test
   hosts: all
   tasks:
-    - name: connect and exit
-      raw: exit
+    - name: connect and run a noop command
+      raw: cd
       register: result
     - debug: var=result
