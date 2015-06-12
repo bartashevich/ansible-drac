@@ -54,3 +54,4 @@ See the `debug.yml` playbook for a complete example.
 - add cipher0 check/fix
 - conditionally update settings (check first, apply only if needed..maybe we can add custom drac facts?)
 - find cases where we show success but actually failed still :(
+- add link to RS-specific info on how to generate drac-hosts inventory
