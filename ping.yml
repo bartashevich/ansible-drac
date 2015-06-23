@@ -5,4 +5,4 @@
   connection: local # run ping from the local box
   tasks:
     - name: ping check
-      raw: ping -t 5 -c 1 {{ inventory_hostname }}
+      raw: ping -t 5 -c 3 {{ inventory_hostname }}
