@@ -42,6 +42,14 @@ Checks to see if racadm is runnable.
 ### racreset
 Runs a racreset on each DRAC.
 
+### set-root-password
+Sets the root password to the provided value.  Run it with an additional argument like this (replace _newpassword_ with your desired password):
+```bash
+ansible-playbook -e "root_password=newpassword" -i example-hosts set-root-password.yml
+```
+
+**NOTE:** Use a 20 character or less password for maximum compatibility.
+
 ### web-ui-enable/disable
 Enables or disables the web UI.
 
@@ -64,6 +72,8 @@ To add debug output to any task add the following:
 ```
 
 See the `debug.yml` playbook for a complete example.
+
+You can also use `-vvv` with the ansible-playbook command for additional debug output.
 
 ## Notes / Caveats
 - running `exit` as a command confuses ansible-playbook when using a bastion/ssh_proxy setup (ansible ad-hoc will run it just fine though)
