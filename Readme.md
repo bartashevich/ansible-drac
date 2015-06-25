@@ -21,7 +21,7 @@ Example:
 `ansible-playbook -f 15 -i example-hosts -l google ping.yml`
 
 ### auto-attach-enable
-Enables virtual media auto-attaching (required for remote files to work)
+Enables virtual media auto-attaching (required for remote files to work).
 
 ### debug
 Connects and runs a "noop" command, printing full response from the remote.
@@ -40,7 +40,10 @@ Tests basic pingability of the DRAC from the local system.  Running the above ex
 Checks to see if racadm is runnable.
 
 ### racreset
-Runs a racreset on each DRAC
+Runs a racreset on each DRAC.
+
+### web-ui-enable/disable
+Enables or disables the web UI.
 
 ## Bastions
 If you proxy through a "bastion" (shell, jumpbox, etc.) system to access the DRACs then do the following:
