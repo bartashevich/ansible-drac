@@ -5,6 +5,6 @@
   hosts: all
   tasks:
     - name: connect and run a noop command
-      raw: version
+      raw: racadm help
       register: result
     - debug: var=result
