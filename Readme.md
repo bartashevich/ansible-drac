@@ -20,6 +20,19 @@ Example:
 
 `ansible-playbook -f 15 -i example-hosts -l google ping.yml`
 
+### auto-attach-enable
+Enables virtual media auto-attaching (required for remote files to work)
+
+### debug
+Connects and runs a "noop" command, printing full response from the remote.
+
+The debug playbook is useful as a quick "status" check.  The tasks will almost always succeed but the output will tell you if the DRAC is responding, etc.
+
+### only-allow-ssh
+Limit DRAC services to ssh.
+
+**NOTE:** This playbook will execute `racadm racreset` at the end of a successful run.  You may want to test this on a single DRAC first. :)
+
 ### ping
 Tests basic pingability of the DRAC from the local system.  Running the above example should result in some successful and some failed pings.
 
@@ -28,16 +41,6 @@ Checks to see if racadm is runnable.
 
 ### racreset
 Runs a racreset on each DRAC
-
-### only-allow-ssh
-Limit DRAC services to ssh.
-
-**NOTE:** This playbook will execute `racadm racreset` at the end of a successful run.  You may want to test this on a single DRAC first. :)
-
-### debug
-Connects and runs a "noop" command, printing full response from the remote.
-
-The debug playbook is useful as a quick "status" check.  The tasks will almost always succeed but the output will tell you if the DRAC is responding, etc.
 
 ## Bastions
 If you proxy through a "bastion" (shell, jumpbox, etc.) system to access the DRACs then do the following:
