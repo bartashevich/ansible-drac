@@ -39,6 +39,17 @@ Connects and runs a "noop" command, printing full response from the remote.
 
 The debug playbook is useful as a quick "status" check.  The tasks will almost always succeed but the output will tell you if the DRAC is responding, etc.
 
+## Bastions
+If you proxy through a "bastion" (shell, jumpbox, etc.) system to access the DRACs then do the following:
+
+1. `cp ssh_config.example ssh_config`
+2. change `username` to your username (or remove those lines if they match your login user)
+3. change `bastion.*.com` and `bastion.zero.com` to the actual host/wildcard that matches your configuration
+4. uncomment the the denoted line in `ansible.cfg`
+
+At this point ansible runs should use the alternate ssh_config that tunnels connections through your bastion/jumpbox.
+
+
 ## Debugging
 To add debug output to any task add the following:
 ```yaml
