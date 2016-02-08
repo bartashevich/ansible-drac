@@ -85,4 +85,3 @@ You can also use `-vvv` with the ansible-playbook command for additional debug o
 - add cipher0 check/fix
 - conditionally update settings (check first, apply only if needed..maybe we can add custom drac facts?)
 - find cases where we show success but actually failed still :(
-- add link to RS-specific info on how to generate drac-hosts inventory
