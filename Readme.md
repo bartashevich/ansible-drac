@@ -59,7 +59,8 @@ If you proxy through a "bastion" (shell, jumpbox, etc.) system to access the DRA
 1. `cp ssh_config.example ssh_config`
 2. change `username` to your username (or remove those lines if they match your login user)
 3. change `bastion.*.com` and `bastion.zero.com` to the actual host/wildcard that matches your configuration
-4. uncomment the the denoted line in `ansible.cfg`
+4. uncomment the the denoted lines in `ansible.cfg`
+5. you may need to install [sshpass](http://sourceforge.net/projects/sshpass/) if directed by ansible
 
 At this point ansible runs should use the alternate ssh_config that tunnels connections through your bastion/jumpbox.
 
