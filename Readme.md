@@ -34,13 +34,16 @@ Limit DRAC services to ssh.
 **NOTE:** This playbook will execute `racadm racreset` at the end of a successful run.  You may want to test this on a single DRAC first. :)
 
 ### os-install
-Mount a remote install ISO and boot from it.  This example demonstrates using a remote (nearby) NFS server to mount the install image from.  SMB/CIFS is also [purported to work](http://www.dell.com/support/article/ed/en/msbsdt1/SLN266099/en). 
+Mount a remote install ISO and boot from it.  This example demonstrates using a remote (nearby) NFS server to mount the install image from.  SMB/CIFS is also [purported to work](http://www.dell.com/support/article/ed/en/msbsdt1/SLN266099/en).
 ```bash
 ansible-playbook -e "remote_image=10.0.0.10:/media/iso/ubuntu-14.04.2-server-amd64.iso" -i example-hosts os-install.yml
 ```
 
 ### ping
 Tests basic pingability of the DRAC from the local system.  Running the above example should result in some successful and some failed pings.
+
+### ping_ssh
+Tests ssh connectivity of the DRAC from the local system. Especially usefull when ping (ICMP) is not allowed.
 
 ### racadm
 Checks to see if racadm is runnable.
